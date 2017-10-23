@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h4>BARCODE</h4>
+		<label>Nama</label>
+		<input type="text" ng-model="ctrl.barcode.name">
+		<label>Alamat</label>
+		<input type="text" ng-model="ctrl.barcode.address">
+		<label>Type Motor</label>
+		<input type="text" ng-model="ctrl.barcode.type">
+		<label>No Rangka</label>
+		<input type="text" ng-model="ctrl.barcode.chasis_number">
+		<label>No Mesin</label>
+		<input type="text" ng-model="ctrl.barcode.engine_number">
+		<label>Tanggal Penjualan</label>
+		<input type="text"  id="date" ng-model="ctrl.barcode.sales_date">
+
+		<button class="btn btn-block btn-info" ng-click="ctrl.store(ctrl.barcode)">Simpan</button>
+
+		<button class="btn btn-block btn-danger" ng-click="ctrl.generate(ctrl.barcode)">Cetak Barcode</button>
+	</div>
+</div>

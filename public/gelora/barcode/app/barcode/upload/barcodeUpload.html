@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h4>Barcode</h4>
+
+		<a ui-sref="barcodeShow">Buat Barcode Label</a>
+		<p>Template <a href="/application-files/barcode.csv">Disini</a></p>
+
+		<input type="file" id="csv-file">
+		<button class="btn btn-block btn-sm" ng-click="ctrl.loadFile()" >Load File</button>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+					<tr>
+						<th>Nomor Mesin</th>
+						<th>Nomor Rangka</th>
+						<th>Nama</th>
+						<th>Alamat</th>
+						<th>Type</th>
+						<th>Tanggal Penjualan</th>
+						<th>Status </th>
+						<th>Cetak</th>
+					</tr>
+				<tbody>
+					<tr ng-repeat="barcode in ctrl.barcodes">
+						<td>{{barcode.engine_number}}</td>
+						<td>{{barcode.chasis_number}}</td>
+						<td>{{barcode.name}}</td>
+						<td>{{barcode.address}}</td>
+						<td>{{barcode.type}}</td>
+						<td>{{barcode.sales_date}}</td>
+						<td>{{barcode.status}}</td>
+						<td>
+							<button class="btn btn-xs btn btn-block" ng-click="ctrl.generate(barcode)">Cetak Barcode</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<button class="btn btn-block btn-xs " ng-click="ctrl.uploadAll()">Upload</button>
+	</div>
+</div>	
